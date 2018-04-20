@@ -65,14 +65,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         print("didSelectRowAt index = \(index)")
         
         let keys = Array(dataDic.keys)
-        let values = Array(dataDic.values)
-        
-        let keys2 = dataDic.map{ $0.0 }
         let values2 = dataDic.map{ $0.1 }
-
-//        var theClass = NSClassFromString(keys[indexPath.row])
-//        let vcType: UIViewController.Type = theClass as! UIViewController.Type
-//        let vc = vcType.init()
         
         let vcClass :AnyClass = values2[indexPath.row]
         let vc = MainVCData.shareData.generateVC(vcClass: vcClass)
