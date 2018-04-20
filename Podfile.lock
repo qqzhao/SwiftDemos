@@ -1,0 +1,39 @@
+PODS:
+  - Bolts/Tasks (1.9.0)
+  - Parse (1.15.4):
+    - Bolts/Tasks (~> 1.9)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Parse (~> 1.15.3)
+  - Realm (~> 3.0.2)
+  - RxCocoa (~> 4.1.2)
+  - RxSwift (~> 4.1.2)
+  - SnapKit (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Bolts
+    - Parse
+    - Realm
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Parse: 1968c634e1c782fb31aad6872f6d32de911bb122
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 1f2118462e2f86bc59ab2847457cd478872b9cc4
+
+COCOAPODS: 1.5.0
