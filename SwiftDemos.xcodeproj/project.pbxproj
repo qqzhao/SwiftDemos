@@ -19,9 +19,6 @@
 		C0BA000C208981B800616A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BA000A208981B800616A62 /* LaunchScreen.storyboard */; };
 		C0BA0017208981B800616A62 /* SwiftDemosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0016208981B800616A62 /* SwiftDemosTests.swift */; };
 		C0BA0022208981B800616A62 /* SwiftDemosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0021208981B800616A62 /* SwiftDemosUITests.swift */; };
-		C0BA00312089AA2C00616A62 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BA00302089AA2C00616A62 /* Bolts.framework */; };
-		C0BA00332089AA2C00616A62 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BA00322089AA2C00616A62 /* Parse.framework */; };
-		C0BA00352089AA2C00616A62 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BA00342089AA2C00616A62 /* Realm.framework */; };
 		C0BA00372089AA2C00616A62 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BA00362089AA2C00616A62 /* RxCocoa.framework */; };
 		C0BA00392089AA2C00616A62 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BA00382089AA2C00616A62 /* RxSwift.framework */; };
 		C0BA003B2089AA9800616A62 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C0BA003A2089AA9800616A62 /* Podfile */; };
@@ -114,9 +111,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0BA003D2089ACB300616A62 /* SnapKit.framework in Frameworks */,
-				C0BA00312089AA2C00616A62 /* Bolts.framework in Frameworks */,
-				C0BA00332089AA2C00616A62 /* Parse.framework in Frameworks */,
-				C0BA00352089AA2C00616A62 /* Realm.framework in Frameworks */,
 				C0BA00372089AA2C00616A62 /* RxCocoa.framework in Frameworks */,
 				C0BA00392089AA2C00616A62 /* RxSwift.framework in Frameworks */,
 				A1ECA540DA955A860BD658BA /* Pods_SwiftDemos.framework in Frameworks */,
@@ -463,18 +457,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDemos/Pods-SwiftDemos-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -681,10 +669,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -704,10 +689,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -725,11 +707,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -746,11 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -766,11 +740,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemosUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -786,11 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemosUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
