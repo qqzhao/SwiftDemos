@@ -14,10 +14,11 @@ struct MainVCData {
     public let vclist: Dictionary<String, AnyClass> = ["SnapKit": SnapKit.self,
                                             "RxSwift" : RxSwift.self,
                                             "Realm" : Realm.self,
+                                            "ImagePicker" : ImagePicker.self,
                                             "Parse" : Parse.self]
     
     public let needAuto = true
-    public let defaultItem: String = "RxSwift"
+    public let defaultItem: String = "ImagePicker"
     
     static let shareData = MainVCData()
     

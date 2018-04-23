@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A1ECA540DA955A860BD658BA /* Pods_SwiftDemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C4AA7B2C4A8F77EC4A2BB /* Pods_SwiftDemos.framework */; };
+		C09704C7208DE58A000E938E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09704C6208DE58A000E938E /* ImagePicker.swift */; };
+		C09704CC208DFC03000E938E /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09704CB208DFC03000E938E /* UIColor+Util.swift */; };
+		C09704CF208DFC9C000E938E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09704CE208DFC9C000E938E /* UIImage+Extension.swift */; };
+		C09704D1208E0B81000E938E /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09704D0208E0B81000E938E /* UIImagePickerController+RxCreate.swift */; };
 		C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0001208981B700616A62 /* AppDelegate.swift */; };
 		C0BA0004208981B700616A62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0003208981B700616A62 /* ViewController.swift */; };
 		C0BA0007208981B700616A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BA0005208981B700616A62 /* Main.storyboard */; };
@@ -53,6 +57,10 @@
 		0A4E1B908689767292C1A09A /* Pods-SwiftDemos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemos.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemos/Pods-SwiftDemos.release.xcconfig"; sourceTree = "<group>"; };
 		19C334C7F8F1F4581EADDE23 /* Pods-SwiftDemos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemos/Pods-SwiftDemos.debug.xcconfig"; sourceTree = "<group>"; };
 		294C4AA7B2C4A8F77EC4A2BB /* Pods_SwiftDemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09704C6208DE58A000E938E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C09704CB208DFC03000E938E /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		C09704CE208DFC9C000E938E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C09704D0208E0B81000E938E /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
 		C0BA0001208981B700616A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0BA0003208981B700616A62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C0BA0006208981B700616A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +140,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C09704CA208DFC03000E938E /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				C09704CB208DFC03000E938E /* UIColor+Util.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		C09704CD208DFC9C000E938E /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				C09704CE208DFC9C000E938E /* UIImage+Extension.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		C0BA0000208981B700616A62 /* SwiftDemos */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +204,9 @@
 		C0BA00512089ED7800616A62 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C09704CD208DFC9C000E938E /* UIImage */,
+				C09704CA208DFC03000E938E /* Color */,
+				C09704D0208E0B81000E938E /* UIImagePickerController+RxCreate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -225,6 +252,7 @@
 				C0BA00592089ED7800616A62 /* Realm.swift */,
 				C0BA005A2089ED7800616A62 /* RxSwift.swift */,
 				C0BA005B2089ED7800616A62 /* SnapKit.swift */,
+				C09704C6208DE58A000E938E /* ImagePicker.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -479,13 +507,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09704D1208E0B81000E938E /* UIImagePickerController+RxCreate.swift in Sources */,
+				C09704CC208DFC03000E938E /* UIColor+Util.swift in Sources */,
 				C0BA005E2089ED7800616A62 /* Realm.swift in Sources */,
 				C0BA0004208981B700616A62 /* ViewController.swift in Sources */,
+				C09704CF208DFC9C000E938E /* UIImage+Extension.swift in Sources */,
 				C0BA005D2089ED7800616A62 /* Parse.swift in Sources */,
 				C0BA006A208D7D9800616A62 /* OCTestLabel.m in Sources */,
 				C0BA005F2089ED7800616A62 /* RxSwift.swift in Sources */,
 				C0BA005C2089ED7800616A62 /* MyScreenLabel.swift in Sources */,
 				C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */,
+				C09704C7208DE58A000E938E /* ImagePicker.swift in Sources */,
 				C0BA00602089ED7800616A62 /* SnapKit.swift in Sources */,
 				C0BA00622089EDB500616A62 /* MainViewModel.swift in Sources */,
 			);
