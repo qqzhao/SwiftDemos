@@ -29,6 +29,7 @@
 		C0BA00602089ED7800616A62 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA005B2089ED7800616A62 /* SnapKit.swift */; };
 		C0BA00622089EDB500616A62 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA00612089EDB500616A62 /* MainViewModel.swift */; };
 		C0BA00652089FD6A00616A62 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = C0BA00642089FD6A00616A62 /* ReadMe.md */; };
+		C0BA006A208D7D9800616A62 /* OCTestLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0069208D7D9800616A62 /* OCTestLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,9 @@
 		C0BA005B2089ED7800616A62 /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
 		C0BA00612089EDB500616A62 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C0BA00642089FD6A00616A62 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		C0BA0067208D7D9800616A62 /* SwiftDemos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemos-Bridging-Header.h"; sourceTree = "<group>"; };
+		C0BA0068208D7D9800616A62 /* OCTestLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestLabel.h; sourceTree = "<group>"; };
+		C0BA0069208D7D9800616A62 /* OCTestLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestLabel.m; sourceTree = "<group>"; };
 		C0BAFFFE208981B700616A62 /* SwiftDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +187,7 @@
 		C0BA00522089ED7800616A62 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C0BA0066208D7D7200616A62 /* Test */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -230,6 +235,16 @@
 				C0BA00642089FD6A00616A62 /* ReadMe.md */,
 			);
 			path = docs;
+			sourceTree = "<group>";
+		};
+		C0BA0066208D7D7200616A62 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C0BA0068208D7D9800616A62 /* OCTestLabel.h */,
+				C0BA0069208D7D9800616A62 /* OCTestLabel.m */,
+				C0BA0067208D7D9800616A62 /* SwiftDemos-Bridging-Header.h */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		C0BAFFF5208981B700616A62 = {
@@ -341,6 +356,7 @@
 					};
 					C0BAFFFD208981B700616A62 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -466,6 +482,7 @@
 				C0BA005E2089ED7800616A62 /* Realm.swift in Sources */,
 				C0BA0004208981B700616A62 /* ViewController.swift in Sources */,
 				C0BA005D2089ED7800616A62 /* Parse.swift in Sources */,
+				C0BA006A208D7D9800616A62 /* OCTestLabel.m in Sources */,
 				C0BA005F2089ED7800616A62 /* RxSwift.swift in Sources */,
 				C0BA005C2089ED7800616A62 /* MyScreenLabel.swift in Sources */,
 				C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */,
@@ -628,6 +645,7 @@
 			baseConfigurationReference = 19C334C7F8F1F4581EADDE23 /* Pods-SwiftDemos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
@@ -638,6 +656,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDemos/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -648,6 +668,7 @@
 			baseConfigurationReference = 0A4E1B908689767292C1A09A /* Pods-SwiftDemos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
@@ -658,6 +679,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianzhaotest.SwiftDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDemos/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

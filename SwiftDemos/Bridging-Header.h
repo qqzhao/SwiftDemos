@@ -6,8 +6,4 @@
 //  Copyright © 2018年 qianzhao. All rights reserved.
 //
 
-#ifndef Bridging_Header_h
-#define Bridging_Header_h
-
-
-#endif /* Bridging_Header_h */
+#import "SwiftDemos-Bridging-Header.h"

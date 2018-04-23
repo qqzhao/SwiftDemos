@@ -13,12 +13,14 @@ import RxCocoa
 
 class RxSwift: UIViewController {
     let button: UIButton = UIButton()
+    let myLabel = OCTestLabel()
     var disposeBag: DisposeBag? = DisposeBag()
     var counter: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         initButton()
+        initLabel()
     }
 }
 
@@ -53,6 +55,19 @@ extension RxSwift {
             })
             .disposed(by: disposeBag!)
         print("self.disposeBag = \(self.disposeBag)")
+    }
+    
+    func initLabel() -> Void {
+        let supV: UIView = self.view
+        supV.addSubview(myLabel)
+        myLabel.backgroundColor = .yellow
+        myLabel.textAlignment = .center
+        myLabel.snp.makeConstraints { (make) in
+            make.width.equalTo(200)
+            make.height.equalTo(50)
+            make.top.equalTo(button.snp.bottom)
+            make.centerX.equalTo(supV)
+        }
     }
 }
 
