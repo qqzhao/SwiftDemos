@@ -12,9 +12,7 @@ import UIKit
 struct MainVCData {
     
     public let vclist: Dictionary<String, AnyClass> = ["SnapKit": SnapKit.self,
-                                            "RxSwift" : RxSwift.self,
-                                            "Realm" : Realm.self,
-                                            "Parse" : Parse.self]
+                                            "RxSwift" : RxSwift.self]
     
     public let needAuto = true
     public let defaultItem: String = "RxSwift"
