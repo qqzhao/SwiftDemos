@@ -13,7 +13,7 @@ enum ToastPos {
     case top, bottom, center
 }
 
-extension Toast{
+class QBToast: NSObject{
     class func defaultConfig() {
         ToastView.appearance().backgroundColor = UIColor(rgb: 0x000000, alpha: 0.5)
         ToastView.appearance().textInsets = UIEdgeInsetsMake(10, 20, 10, 20)

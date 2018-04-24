@@ -104,16 +104,16 @@ extension ToastViewController{
     }
     func testToast4() -> Void{
         print("toast4")
-        Toast.showText("hello world!", pos: .center)
+        QBToast.showText("hello world!", pos: .center)
     }
     
     func testToast5() -> Void{
         print("toast5")
-        Toast.showText("hello world!", pos: .top)
+        QBToast.showText("hello world!", pos: .top)
     }
     
     func testToast6() -> Void{
         print("toast6")
-        Toast.showText("hello world!", pos: .bottom)
+        QBToast.showText("hello world!", pos: .bottom)
     }
 }
