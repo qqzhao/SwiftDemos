@@ -12,10 +12,11 @@ import UIKit
 struct MainVCData {
     
     public let vclist: Dictionary<String, AnyClass> = ["SnapKit": SnapKit.self,
-                                            "RxSwift" : RxSwift.self]
+                                            "RxSwift" : RxSwift.self,
+                                            "Toast" : ToastViewController.self]
     
     public let needAuto = true
-    public let defaultItem: String = "RxSwift"
+    public let defaultItem: String = "Toast"
     
     static let shareData = MainVCData()
     

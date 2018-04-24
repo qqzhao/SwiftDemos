@@ -25,6 +25,12 @@
 		C0BA00652089FD6A00616A62 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = C0BA00642089FD6A00616A62 /* ReadMe.md */; };
 		C0BA006A208D7D9800616A62 /* OCTestLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0069208D7D9800616A62 /* OCTestLabel.m */; };
 		C0CA62C2208F40E500F8692D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62C1208F40E500F8692D /* ViewController.swift */; };
+		C0CA62C4208F44F900F8692D /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CA62C3208F44F900F8692D /* Toaster.framework */; };
+		C0CA62C6208F454C00F8692D /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62C5208F454C00F8692D /* ToastViewController.swift */; };
+		C0CA62CC208F55E700F8692D /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62C8208F55E600F8692D /* UIColor+Util.swift */; };
+		C0CA62CD208F55E700F8692D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62CA208F55E700F8692D /* UIImage+Extension.swift */; };
+		C0CA62CE208F55E700F8692D /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62CB208F55E700F8692D /* UIImagePickerController+RxCreate.swift */; };
+		C0CA62D1208F561E00F8692D /* Toaster+Expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA62D0208F561E00F8692D /* Toaster+Expand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +83,12 @@
 		C0BA0069208D7D9800616A62 /* OCTestLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestLabel.m; sourceTree = "<group>"; };
 		C0BAFFFE208981B700616A62 /* SwiftDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CA62C1208F40E500F8692D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0CA62C3208F44F900F8692D /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0CA62C5208F454C00F8692D /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
+		C0CA62C8208F55E600F8692D /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		C0CA62CA208F55E700F8692D /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C0CA62CB208F55E700F8692D /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
+		C0CA62D0208F561E00F8692D /* Toaster+Expand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toaster+Expand.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0CA62C4208F44F900F8692D /* Toaster.framework in Frameworks */,
 				C0BA003D2089ACB300616A62 /* SnapKit.framework in Frameworks */,
 				C0BA00372089AA2C00616A62 /* RxCocoa.framework in Frameworks */,
 				C0BA00392089AA2C00616A62 /* RxSwift.framework in Frameworks */,
@@ -111,6 +124,7 @@
 		B9E505AF3FFC20882FF892EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0CA62C3208F44F900F8692D /* Toaster.framework */,
 				C0BA003C2089ACB300616A62 /* SnapKit.framework */,
 				C0BA00302089AA2C00616A62 /* Bolts.framework */,
 				C0BA00322089AA2C00616A62 /* Parse.framework */,
@@ -169,6 +183,10 @@
 		C0BA00512089ED7800616A62 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C0CA62CF208F55F800F8692D /* Util */,
+				C0CA62C7208F55E600F8692D /* Color */,
+				C0CA62C9208F55E700F8692D /* UIImage */,
+				C0CA62CB208F55E700F8692D /* UIImagePickerController+RxCreate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -213,6 +231,7 @@
 			children = (
 				C0BA005A2089ED7800616A62 /* RxSwift.swift */,
 				C0BA005B2089ED7800616A62 /* SnapKit.swift */,
+				C0CA62C5208F454C00F8692D /* ToastViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -255,6 +274,30 @@
 				C0BA001D208981B800616A62 /* SwiftDemosUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C0CA62C7208F55E600F8692D /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				C0CA62C8208F55E600F8692D /* UIColor+Util.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		C0CA62C9208F55E700F8692D /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				C0CA62CA208F55E700F8692D /* UIImage+Extension.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		C0CA62CF208F55F800F8692D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C0CA62D0208F561E00F8692D /* Toaster+Expand.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		EBE3D006FB6F65D86B391B22 /* Pods */ = {
@@ -426,12 +469,14 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -463,10 +508,15 @@
 			files = (
 				C0BA006A208D7D9800616A62 /* OCTestLabel.m in Sources */,
 				C0BA005F2089ED7800616A62 /* RxSwift.swift in Sources */,
+				C0CA62CC208F55E700F8692D /* UIColor+Util.swift in Sources */,
 				C0BA005C2089ED7800616A62 /* MyScreenLabel.swift in Sources */,
+				C0CA62D1208F561E00F8692D /* Toaster+Expand.swift in Sources */,
 				C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */,
 				C0CA62C2208F40E500F8692D /* ViewController.swift in Sources */,
 				C0BA00602089ED7800616A62 /* SnapKit.swift in Sources */,
+				C0CA62CD208F55E700F8692D /* UIImage+Extension.swift in Sources */,
+				C0CA62C6208F454C00F8692D /* ToastViewController.swift in Sources */,
+				C0CA62CE208F55E700F8692D /* UIImagePickerController+RxCreate.swift in Sources */,
 				C0BA00622089EDB500616A62 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
