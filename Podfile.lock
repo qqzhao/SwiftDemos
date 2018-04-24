@@ -3,12 +3,14 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SnapKit (4.0.0)
+  - SwiftToast (0.1.0)
   - Toaster (2.1.1)
 
 DEPENDENCIES:
   - RxCocoa (~> 4.1.2)
   - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
+  - SwiftToast
   - Toaster
 
 SPEC REPOS:
@@ -16,14 +18,16 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
+    - SwiftToast
     - Toaster
 
 SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftToast: 9c609c04a9c80a21e28ad5e47a54f5e1522792ba
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: ff339e7a2db00bf118f62a9a644bc42234a75f41
+PODFILE CHECKSUM: 658c9eceaf938ef7331d86412e977e3da3ed5d4c
 
 COCOAPODS: 1.5.0

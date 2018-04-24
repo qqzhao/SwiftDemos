@@ -45,6 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
 
+extension MyCustomCell{
+    func test2() -> Void {
+//        print("test = \(testA)") // error: 'testA' is inaccessible due to 'private' protection level'
+    }
+    
+    func test3() -> Void {
+//        print("test = \(testB)")//'testB' is inaccessible due to 'fileprivate' protection level
+    }
+    
+    func test4() -> Void {
+        print("test = \(testD)")//'testB' is inaccessible due to 'fileprivate' protection level
+    }
 }
 

@@ -13,7 +13,8 @@ struct MainVCData {
     
     public let vclist: Dictionary<String, AnyClass> = ["SnapKit": SnapKit.self,
                                             "RxSwift" : RxSwift.self,
-                                            "Toast" : ToastViewController.self]
+                                            "Toast" : ToastViewController.self,
+                                            "Toast2" : Toast2ViewController.self]
     
     public let needAuto = true
     public let defaultItem: String = "Toast"

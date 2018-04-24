@@ -9,11 +9,14 @@
 import UIKit
 
 extension UIScreen{
-    class public func width() -> CGFloat{
-        return UIScreen.main.bounds.width
-    }
+//    class public func width() -> CGFloat{
+//        return UIScreen.main.bounds.width
+//    }
+//
+//    class public func height() -> CGFloat{
+//        return UIScreen.main.bounds.height
+//    }
     
-    class public func height() -> CGFloat{
-        return UIScreen.main.bounds.height
-    }
+    static let width = UIScreen.main.bounds.width
+    static let height = UIScreen.main.bounds.height
 }

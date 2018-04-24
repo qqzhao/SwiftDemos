@@ -77,6 +77,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 class MyCustomCell: UITableViewCell{
     let suffView = UILabel()
+    private let testA: String = "test"
+    fileprivate let testB: String = "test"
+    public let testC: String = "test"
+    open let testD: String = "test"
     required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initSuffView()
@@ -99,6 +103,15 @@ class MyCustomCell: UITableViewCell{
     }
     func setText(text: String) -> Void {
         suffView.text = text
+    }
+}
+
+extension MyCustomCell{
+    func test() -> Void {
+        print("test = \(testA)") // swift 3.3 的时候编译出错，swift4.1的时候又没有问题了。说明4.1又放开了限制。
+        print("test = \(testB)")
+        print("test = \(testC)")
+        print("test = \(testD)")
     }
 }
 

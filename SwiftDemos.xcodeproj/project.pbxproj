@@ -10,6 +10,8 @@
 		A1ECA540DA955A860BD658BA /* Pods_SwiftDemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C4AA7B2C4A8F77EC4A2BB /* Pods_SwiftDemos.framework */; };
 		C034A47F208F92DE003640F1 /* UIView+Expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A47E208F92DE003640F1 /* UIView+Expand.swift */; };
 		C034A481208F93CC003640F1 /* Base+Expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A480208F93CC003640F1 /* Base+Expand.swift */; };
+		C034A483208FA331003640F1 /* Toast2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034A482208FA331003640F1 /* Toast2ViewController.swift */; };
+		C034A485208FA3BD003640F1 /* SwiftToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C034A484208FA3BD003640F1 /* SwiftToast.framework */; };
 		C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0001208981B700616A62 /* AppDelegate.swift */; };
 		C0BA0007208981B700616A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BA0005208981B700616A62 /* Main.storyboard */; };
 		C0BA0009208981B800616A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0BA0008208981B800616A62 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		294C4AA7B2C4A8F77EC4A2BB /* Pods_SwiftDemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C034A47E208F92DE003640F1 /* UIView+Expand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Expand.swift"; sourceTree = "<group>"; };
 		C034A480208F93CC003640F1 /* Base+Expand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base+Expand.swift"; sourceTree = "<group>"; };
+		C034A482208FA331003640F1 /* Toast2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast2ViewController.swift; sourceTree = "<group>"; };
+		C034A484208FA3BD003640F1 /* SwiftToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BA0001208981B700616A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0BA0006208981B700616A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0BA0008208981B800616A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C034A485208FA3BD003640F1 /* SwiftToast.framework in Frameworks */,
 				C0CA62C4208F44F900F8692D /* Toaster.framework in Frameworks */,
 				C0BA003D2089ACB300616A62 /* SnapKit.framework in Frameworks */,
 				C0BA00372089AA2C00616A62 /* RxCocoa.framework in Frameworks */,
@@ -128,6 +133,7 @@
 		B9E505AF3FFC20882FF892EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C034A484208FA3BD003640F1 /* SwiftToast.framework */,
 				C0CA62C3208F44F900F8692D /* Toaster.framework */,
 				C0BA003C2089ACB300616A62 /* SnapKit.framework */,
 				C0BA00302089AA2C00616A62 /* Bolts.framework */,
@@ -246,6 +252,7 @@
 				C0BA005A2089ED7800616A62 /* RxSwift.swift */,
 				C0BA005B2089ED7800616A62 /* SnapKit.swift */,
 				C0CA62C5208F454C00F8692D /* ToastViewController.swift */,
+				C034A482208FA331003640F1 /* Toast2ViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -483,6 +490,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftToast/SwiftToast.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -490,6 +498,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftToast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +535,7 @@
 				C0CA62CC208F55E700F8692D /* UIColor+Util.swift in Sources */,
 				C034A481208F93CC003640F1 /* Base+Expand.swift in Sources */,
 				C0BA005C2089ED7800616A62 /* MyScreenLabel.swift in Sources */,
+				C034A483208FA331003640F1 /* Toast2ViewController.swift in Sources */,
 				C0CA62D1208F561E00F8692D /* Toaster+Expand.swift in Sources */,
 				C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */,
 				C0CA62C2208F40E500F8692D /* ViewController.swift in Sources */,
@@ -696,6 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -720,6 +731,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVDDR6XGW9;
 				INFOPLIST_FILE = SwiftDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

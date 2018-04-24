@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
-import Toaster
+import SwiftToast
 
-class ToastViewController: UIViewController {
+class Toast2ViewController: UIViewController {
     
     let dispostBag = DisposeBag()
     private let scrollView: UIScrollView = {
@@ -41,13 +41,13 @@ class ToastViewController: UIViewController {
         let spaceH = itemH + 10
         let items = [1,2,3,4,5,6,7]
         for item in items {
-//            print("item = \(item)")
+            //            print("item = \(item)")
             let button = UIButton()
             button.setTitle("button(\(item))", for: .normal)
             button.setTitle("click button(\(item))", for: .highlighted)
             supV.addSubview(button)
             button.backgroundColor = .gray
-//            print("button = \(button)")
+            //            print("button = \(button)")
             button.snp.makeConstraints { (make) in
                 make.width.equalToSuperview()
                 make.height.equalTo(itemH)
@@ -61,7 +61,7 @@ class ToastViewController: UIViewController {
     }
     
     func configEvents(_ button :UIButton, index:Int) -> Void {
-//        print("index = \(index)")
+        //        print("index = \(index)")
         switch index {
         case 1:
             button.rx.tap.subscribe(onNext: { [weak self]() in
@@ -97,47 +97,32 @@ class ToastViewController: UIViewController {
     }
 }
 
-extension ToastViewController{
+extension Toast2ViewController{
     func testToast1() -> Void{
         print("toast1")
-        ToastView.appearance().bottomOffsetPortrait = 30
-        ToastView.appearance().backgroundColor = .gray
-        ToastView.appearance().textInsets = UIEdgeInsetsMake(30, 20, 30, 20)
-        let toast = Toast(text: "hello world, how are you!")
-        toast.show()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            toast.cancel()
-        }
+//        let toast =  SwiftToast(text: "This is a SwiftToast",
+//                               duration: nil,
+//                               isUserInteractionEnabled: false)
+//        present(toast, animated: true)
     }
     func testToast2() -> Void{
         print("toast2")
-        ToastView.appearance().backgroundColor = .red
-        let toast = Toast(text: "Hello, world!", duration: Delay.long)
-        toast.show()
     }
     func testToast3() -> Void{
         print("toast3")
-        ToastView.appearance().textInsets = UIEdgeInsetsMake(100, 20, 100, 20)
-        ToastView.appearance().bottomOffsetPortrait = UIScreen.height / 2 - 20
-        let toast = Toast(text: "Hello, world!", duration: Delay.long)
-        toast.show()
     }
     func testToast4() -> Void{
         print("toast4")
-        QBToast.showText("hello world!", pos: .center)
     }
     
     func testToast5() -> Void{
         print("toast5")
-        QBToast.showText("hello world!", pos: .top)
     }
     
     func testToast6() -> Void{
         print("toast6")
-        QBToast.showText("hello world!", pos: .bottom)
     }
     func testToast7() -> Void{
         print("toast7")
-        QBToast.showText("hello world!\nHow are you? What", pos: .center)
     }
 }
