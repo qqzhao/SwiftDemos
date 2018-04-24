@@ -15,22 +15,37 @@ import Toaster
 class ToastViewController: UIViewController {
     
     let dispostBag = DisposeBag()
+    private let scrollView: UIScrollView = {
+        let scrollview: UIScrollView = UIScrollView()
+        return scrollview
+    }()
     var buttons = [UIButton]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.edgesForExtendedLayout = .bottom
+        self.extendedLayoutIncludesOpaqueBars = false;
+        initUI()
+    }
+    
+    func initUI(){
+        self.view.addSubview(scrollView)
+        scrollView.backgroundColor = .green
+        scrollView.frame = CGRect(x: 0, y: 0, width: self.view.width(), height: self.view.height())
         setupButtons()
     }
     
     func setupButtons() -> Void {
         let itemH = 80
+        let supV = scrollView
         let spaceH = itemH + 10
-        for item in [1,2,3,4,5,6] {
+        let items = [1,2,3,4,5,6,7]
+        for item in items {
 //            print("item = \(item)")
             let button = UIButton()
             button.setTitle("button(\(item))", for: .normal)
             button.setTitle("click button(\(item))", for: .highlighted)
-            self.view.addSubview(button)
+            supV.addSubview(button)
             button.backgroundColor = .gray
 //            print("button = \(button)")
             button.snp.makeConstraints { (make) in
@@ -42,6 +57,7 @@ class ToastViewController: UIViewController {
             configEvents(button, index: item)
             buttons.append(button)
         }
+        scrollView.contentSize = CGSize(width: UIScreen.width(), height: CGFloat(items.count * spaceH + 130))
     }
     
     func configEvents(_ button :UIButton, index:Int) -> Void {
@@ -71,6 +87,10 @@ class ToastViewController: UIViewController {
             button.rx.tap.subscribe (onNext: { [weak self] () in
                 self!.testToast6()
             }).disposed(by: dispostBag)
+        case 7:
+            button.rx.tap.subscribe (onNext: { [weak self] () in
+                self!.testToast7()
+            }).disposed(by: dispostBag)
         default:
             print("item default")
         }
@@ -83,11 +103,11 @@ extension ToastViewController{
         ToastView.appearance().bottomOffsetPortrait = 30
         ToastView.appearance().backgroundColor = .gray
         ToastView.appearance().textInsets = UIEdgeInsetsMake(30, 20, 30, 20)
-        let toast = Toast(text: "hello world, how are you!", delay: 0, duration: 3.0)
+        let toast = Toast(text: "hello world, how are you!")
         toast.show()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//            toast.cancel()
-//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            toast.cancel()
+        }
     }
     func testToast2() -> Void{
         print("toast2")
@@ -115,5 +135,9 @@ extension ToastViewController{
     func testToast6() -> Void{
         print("toast6")
         QBToast.showText("hello world!", pos: .bottom)
+    }
+    func testToast7() -> Void{
+        print("toast7")
+        QBToast.showText("hello world!\nHow are you? What", pos: .center)
     }
 }
