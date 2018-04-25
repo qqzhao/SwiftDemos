@@ -19,10 +19,10 @@ enum ShareChannel {
  */
 enum ShareContentType {
     case titleOnly,
-//        titleSummary,
-//        titleSummaryThumb,
-        imageOnly,titleImage,summaryImage,titleSummaryImage, // 后3个都不行，分享失败
-        urlOnly,titleUrl, SummaryUrl,titleSummaryUrl,titleSummaryImageUrl
+        imageOnly, // 后3个都不行，分享失败 (titleImage,summaryImage,titleSummaryImage)
+        urlParams,
+        miniProgram,
+        gif
 }
 
 class ShareContent: NSObject{

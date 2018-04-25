@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
 extension WXApiWrap {
     
     func test() -> Void {
-        test10()
+        test12()
     }
     
     fileprivate func test1() -> Void {
@@ -21,59 +22,37 @@ extension WXApiWrap {
     
     fileprivate func test2() -> Void {
         let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-//        conent.imageSrc = "http://stdl.qq.com/stdl/translator/wxappedu/wap/student/3-2-1.jpg"
         let image: UIImage = #imageLiteral(resourceName: "icon_new")
         content.imageData = UIImagePNGRepresentation(image)
         content.contentType = .imageOnly
         WXApiWrap.shared.shareContent(content, channel: .wechatSession)
     }
     
-    fileprivate func test3() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .urlOnly
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test4() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .titleImage
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test5() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .summaryImage
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test6() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .titleSummaryImage
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test7() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .titleUrl
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test8() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .SummaryUrl
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
-    fileprivate func test9() -> Void {
-        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .titleSummaryUrl
-        WXApiWrap.shared.shareContent(content, channel: .wechatSession)
-    }
-    
     fileprivate func test10() -> Void {
         let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
-        content.contentType = .titleSummaryImageUrl
+        content.contentType = .urlParams
         content.thumbData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
+        WXApiWrap.shared.shareContent(content, channel: .wechatTimeline)
+    }
+    
+    fileprivate func test11() -> Void {
+        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
+        content.contentType = .miniProgram
+        content.thumbData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
+        WXApiWrap.shared.shareContent(content, channel: .wechatMiniProgram)
+    }
+    
+    fileprivate func test12() -> Void {
+        let content:ShareContent = ShareContent("this is title", url: "http://baidu.com", summary: "summary")
+        content.contentType = .gif
+        content.thumbData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
+        let fileUrl: String? = Bundle.main.path(forResource: "share", ofType: "gif")
+        do{
+            let data:NSData = try NSData(contentsOf: URL(fileURLWithPath: fileUrl!), options: .alwaysMapped)
+            content.imageData = data as Data
+        } catch {}
+        
+//        content.imageData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
         WXApiWrap.shared.shareContent(content, channel: .wechatSession)
     }
 }

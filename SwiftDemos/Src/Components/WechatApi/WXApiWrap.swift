@@ -19,6 +19,9 @@ import UIKit
  libsqlite3.tbd
  */
 let APPID = "wxa1f06899243f8b14"
+let MiniProgramWebPageUrl = "http://baidu.com"
+let MiniProgramBrandUserName = ""
+let MiniProgramSharePath = "/pages/index/index"
 
 class WXApiWrap: NSObject {
     public static let shared = WXApiWrap()
@@ -63,65 +66,7 @@ extension WXApiWrap{
             message.mediaObject = obj;
             sendReq.message = message;
             
-        case .titleImage:
-            sendReq.bText = false
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXImageObject = WXImageObject()
-            obj.imageData = content.imageData;
-            message.mediaObject = obj;
-            message.title = content.title
-            sendReq.message = message;
-            
-        case .summaryImage:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXImageObject = WXImageObject()
-            obj.imageData = content.imageData;
-            message.mediaObject = obj;
-            message.description = content.summary
-            sendReq.message = message;
-            
-        case .titleSummaryImage:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXImageObject = WXImageObject()
-            obj.imageData = content.imageData;
-            message.mediaObject = obj;
-            message.title = content.title
-            message.description = content.summary
-            sendReq.message = message;
-            
-        case .urlOnly:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXWebpageObject = WXWebpageObject()
-            obj.webpageUrl = content.url;
-            message.mediaObject = obj;
-            sendReq.message = message;
-            
-        case .titleUrl:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXWebpageObject = WXWebpageObject()
-            obj.webpageUrl = content.url;
-            message.mediaObject = obj;
-            message.title = content.title
-            sendReq.message = message;
-            
-        case .SummaryUrl:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXWebpageObject = WXWebpageObject()
-            obj.webpageUrl = content.url;
-            message.mediaObject = obj;
-            message.description = content.summary
-            sendReq.message = message;
-            
-        case .titleSummaryUrl:
-            let message: WXMediaMessage = WXMediaMessage.init()
-            let obj: WXWebpageObject = WXWebpageObject()
-            obj.webpageUrl = content.url;
-            message.mediaObject = obj;
-            message.description = content.summary
-            message.title = content.title
-            sendReq.message = message;
-            
-        case .titleSummaryImageUrl:
+        case .urlParams:
             let message: WXMediaMessage = WXMediaMessage.init()
             let obj: WXWebpageObject = WXWebpageObject()
             obj.webpageUrl = content.url;
@@ -131,6 +76,32 @@ extension WXApiWrap{
             message.thumbData = content.thumbData
             sendReq.message = message;
             
+        case .miniProgram:
+            let ext: WXMiniProgramObject = WXMiniProgramObject();
+            ext.webpageUrl = MiniProgramWebPageUrl;
+            ext.userName = MiniProgramBrandUserName;
+            ext.path = MiniProgramSharePath;
+            
+            let message: WXMediaMessage = WXMediaMessage()
+            message.title = content.title
+            message.description = content.summary
+            message.thumbData = content.thumbData
+            message.mediaObject = ext
+            sendReq.message = message;
+            
+        case .gif:
+            let message: WXMediaMessage = WXMediaMessage()
+            message.title = content.title! + "aa"
+            message.description = content.description
+            message.thumbData = content.thumbData;
+            
+            let imgo:WXEmoticonObject = WXEmoticonObject.init();
+            imgo.emoticonData = content.imageData;
+            message.mediaObject = imgo;
+            message.mediaTagName = "WECHAT_TAG_TRANSLATOR";
+            
+            sendReq.message = message
+            sendReq.bText = false
         default:
             sendReq.bText = true
             sendReq.text = content.title

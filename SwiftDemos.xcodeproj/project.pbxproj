@@ -18,6 +18,7 @@
 		C0AB79F9209070320072D3B8 /* WXConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB79F8209070320072D3B8 /* WXConvert.swift */; };
 		C0AB79FC209072720072D3B8 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB79FB209072720072D3B8 /* ShareManager.swift */; };
 		C0AB79FE20907FDC0072D3B8 /* WxApiWrap+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB79FD20907FDC0072D3B8 /* WxApiWrap+Test.swift */; };
+		C0AB7A01209094640072D3B8 /* share.gif in Resources */ = {isa = PBXBuildFile; fileRef = C0AB7A00209094640072D3B8 /* share.gif */; };
 		C0BA0002208981B700616A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA0001208981B700616A62 /* AppDelegate.swift */; };
 		C0BA0007208981B700616A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BA0005208981B700616A62 /* Main.storyboard */; };
 		C0BA0009208981B800616A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0BA0008208981B800616A62 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		C0AB79F8209070320072D3B8 /* WXConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXConvert.swift; sourceTree = "<group>"; };
 		C0AB79FB209072720072D3B8 /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		C0AB79FD20907FDC0072D3B8 /* WxApiWrap+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WxApiWrap+Test.swift"; sourceTree = "<group>"; };
+		C0AB7A00209094640072D3B8 /* share.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = share.gif; sourceTree = "<group>"; };
 		C0BA0001208981B700616A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0BA0006208981B700616A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0BA0008208981B800616A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		C0AB79FF209094640072D3B8 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB7A00209094640072D3B8 /* share.gif */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
 		C0BA0000208981B700616A62 /* SwiftDemos */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 				C0BA0001208981B700616A62 /* AppDelegate.swift */,
 				C0BA0005208981B700616A62 /* Main.storyboard */,
 				C0BA0008208981B800616A62 /* Assets.xcassets */,
+				C0AB79FF209094640072D3B8 /* support */,
 				C0BA000A208981B800616A62 /* LaunchScreen.storyboard */,
 				C0BA000D208981B800616A62 /* Info.plist */,
 				C0BA002F2089992000616A62 /* Bridging-Header.h */,
@@ -477,6 +488,7 @@
 				C0BA0009208981B800616A62 /* Assets.xcassets in Resources */,
 				C0BA003B2089AA9800616A62 /* Podfile in Resources */,
 				C0BA0007208981B700616A62 /* Main.storyboard in Resources */,
+				C0AB7A01209094640072D3B8 /* share.gif in Resources */,
 				C0BA00652089FD6A00616A62 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
