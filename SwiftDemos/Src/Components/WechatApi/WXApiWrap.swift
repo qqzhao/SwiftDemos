@@ -25,6 +25,7 @@ let MiniProgramSharePath = "/pages/index/index"
 
 class WXApiWrap: NSObject {
     public static let shared = WXApiWrap()
+    var randomStateStr: String?
     public func setup() {
         print("setup WXApiWrap...")
         WXApi.registerApp(APPID, enableMTA: true)
@@ -33,9 +34,10 @@ class WXApiWrap: NSObject {
 
 extension WXApiWrap{
     func quickLogin() -> Void {
+        randomStateStr = String.randomSmallCaseString(length: 10)
         let req: SendAuthReq = SendAuthReq()
         req.scope = "snsapi_userinfo,snsapi_base"
-        req.state = "123";
+        req.state = randomStateStr
         WXApi.sendAuthReq(req, viewController: nil, delegate: WXApiWrap.shared)
     }
     
@@ -53,7 +55,7 @@ extension WXApiWrap{
         }
         
         let sendReq: SendMessageToWXReq = SendMessageToWXReq()
-        sendReq.scene = convertChannelToWXScene(channel)
+        sendReq.scene = Int32(convertChannelToWXScene(channel))
         switch content.contentType {
         case .titleOnly:
             sendReq.bText = true
@@ -102,9 +104,9 @@ extension WXApiWrap{
             
             sendReq.message = message
             sendReq.bText = false
-        default:
-            sendReq.bText = true
-            sendReq.text = content.title
+//        default:
+//            sendReq.bText = true
+//            sendReq.text = content.title
         }
         
         let success: Bool = WXApi.send(sendReq)
@@ -129,7 +131,7 @@ extension WXApiWrap: WXApiDelegate{
     
     fileprivate func responseSendAuth(_ rsp: SendAuthResp) -> Void{
         print("SendAuthResp: \(rsp)")
-        if convertWXErrorCode(rsp.errCode) == .success {
+        if convertWXErrorCode(rsp.errCode) == .success && randomStateStr == rsp.state {
             print("success ///")
         }
     }
@@ -139,5 +141,17 @@ extension WXApiWrap: WXApiDelegate{
         if convertWXErrorCode(rsp.errCode) == .success {
             print("success ///")
         }
+    }
+}
+
+extension String{
+    static func randomSmallCaseString(length: Int) -> String {
+        var output = ""
+        for _ in 0..<length {
+            let randomNumber = arc4random() % 26 + 97
+            let randomChar = Character(UnicodeScalar(randomNumber)!)
+            output.append(randomChar)
+        }
+        return output
     }
 }

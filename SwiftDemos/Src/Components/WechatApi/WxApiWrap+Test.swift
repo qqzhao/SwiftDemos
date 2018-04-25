@@ -47,12 +47,14 @@ extension WXApiWrap {
         content.contentType = .gif
         content.thumbData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
         let fileUrl: String? = Bundle.main.path(forResource: "share", ofType: "gif")
-        do{
-            let data:NSData = try NSData(contentsOf: URL(fileURLWithPath: fileUrl!), options: .alwaysMapped)
-            content.imageData = data as Data
-        } catch {}
+//        do{
+//            let data:NSData = try NSData(contentsOf: URL(fileURLWithPath: fileUrl!), options: .alwaysMapped)
+//            content.imageData = data as Data
+//        } catch {}
         
-//        content.imageData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
+        let data:NSData? = try? NSData(contentsOf: URL(fileURLWithPath: fileUrl!), options: .alwaysMapped)
+        content.imageData = data! as Data
+        
         WXApiWrap.shared.shareContent(content, channel: .wechatSession)
     }
 }

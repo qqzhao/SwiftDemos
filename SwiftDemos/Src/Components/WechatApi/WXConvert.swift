@@ -6,24 +6,23 @@
 //  Copyright © 2018年 qianzhao. All rights reserved.
 //
 
-
 enum WXErrCodeWrap {
     case success,errCommon,errUserCancel,errSendFail,errAuthDeny,errUnsupport
 }
 func convertWXErrorCode(_ errCode:Int32) -> WXErrCodeWrap{
     var ret: WXErrCodeWrap = .errCommon
     switch errCode {
-    case 0:
+    case WXSuccess.rawValue:
         ret = .success
-    case -1:
+    case WXErrCodeCommon.rawValue:
         ret = .errCommon
-    case -2:
+    case WXErrCodeUserCancel.rawValue:
         ret = .errUserCancel
-    case -3:
+    case WXErrCodeSentFail.rawValue:
         ret = .errSendFail
-    case -4:
+    case WXErrCodeAuthDeny.rawValue:
         ret = .errAuthDeny
-    case -5:
+    case WXErrCodeUnsupport.rawValue:
         ret = .errUnsupport
     default:
         ret = .success
@@ -34,19 +33,19 @@ func convertWXErrorCode(_ errCode:Int32) -> WXErrCodeWrap{
 //WXSceneSession  = 0,        /**< 聊天界面    */
 //WXSceneTimeline = 1,        /**< 朋友圈      */
 //WXSceneFavorite = 2,        /**< 收藏       */
-func convertChannelToWXScene(_ channel: ShareChannel) -> Int32 {
-    var scene: Int32 = 0
+func convertChannelToWXScene(_ channel: ShareChannel) -> UInt32 {
+    var scene: UInt32 = 0
     switch channel {
     case .wechatMiniProgram:
-        scene = 0
+        scene = WXSceneSession.rawValue
     case .wechatTimeline:
-        scene = 1
+        scene = WXSceneTimeline.rawValue
     case .wechatSession:
-        scene = 0
+        scene = WXSceneSession.rawValue
     case .wechatFavor:
-        scene = 2
+        scene = WXSceneFavorite.rawValue
     default:
-        scene = 0
+        scene = WXSceneSession.rawValue
     }
     return scene
 }
