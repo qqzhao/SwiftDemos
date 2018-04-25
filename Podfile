@@ -9,7 +9,8 @@ target 'SwiftDemos' do
     pod 'RxCocoa', '~> 4.1.2'
     
 # React Native Begin
-    
+    pod 'QQSDK', :path => 'PodLibs/QQSDK'
+    pod 'Util', :path => 'PodLibs/Common'
 # React Native End
 end
 

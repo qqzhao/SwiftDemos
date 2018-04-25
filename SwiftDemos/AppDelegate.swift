@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Util
+
 //import ViewController
 
 @UIApplicationMain
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         WXApiWrap.shared.setup()
+        UIColor.test1()
+        QQApiInterface.isQQInstalled()
         return true
     }
     

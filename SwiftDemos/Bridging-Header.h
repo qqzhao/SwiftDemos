@@ -11,3 +11,6 @@
 #import "WXApi.h"
 #import "WXApiObject.h"
 
+//#import <TencentOpenAPI/QQApiInterface.h>
+
+#import "QQSDK.h"

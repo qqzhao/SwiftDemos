@@ -1,14 +1,18 @@
 PODS:
+  - QQSDK (0.0.8)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SnapKit (4.0.0)
+  - Util (0.0.4)
   - WechatOpenSDK (1.8.2)
 
 DEPENDENCIES:
+  - QQSDK (from `PodLibs/QQSDK`)
   - RxCocoa (~> 4.1.2)
   - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
+  - Util (from `PodLibs/Common`)
   - WechatOpenSDK
 
 SPEC REPOS:
@@ -18,12 +22,20 @@ SPEC REPOS:
     - SnapKit
     - WechatOpenSDK
 
+EXTERNAL SOURCES:
+  QQSDK:
+    :path: PodLibs/QQSDK
+  Util:
+    :path: PodLibs/Common
+
 SPEC CHECKSUMS:
+  QQSDK: 1db0b122e9f9164a0665f3320ad0de2aa643811b
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Util: c354127cdcce2f19504878a1874c2f5a03c3ae9a
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
 
-PODFILE CHECKSUM: a9fef47008757569091317504b4ed99116da96c1
+PODFILE CHECKSUM: 93c72dd3029cbafd549145c3f29926c9f14fbd90
 
 COCOAPODS: 1.5.0
