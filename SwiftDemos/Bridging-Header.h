@@ -7,3 +7,7 @@
 //
 
 #import "SwiftDemos-Bridging-Header.h"
+
+#import "WXApi.h"
+#import "WXApiObject.h"
+
