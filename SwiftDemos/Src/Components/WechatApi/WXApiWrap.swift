@@ -36,8 +36,108 @@ extension WXApiWrap{
         WXApi.sendAuthReq(req, viewController: nil, delegate: WXApiWrap.shared)
     }
     
+    func isAvailable() -> Bool {
+        return WXApi.isWXAppInstalled()
+    }
+    
     func handleURL(_ url: URL) -> Bool {
         return WXApi.handleOpen(url, delegate: WXApiWrap.shared)
+    }
+    
+    func shareContent(_ content: ShareContent, channel: ShareChannel) -> Void {
+        guard channel == .wechatTimeline || channel == .wechatSession || channel == .wechatMiniProgram else {
+            return
+        }
+        
+        let sendReq: SendMessageToWXReq = SendMessageToWXReq()
+        sendReq.scene = convertChannelToWXScene(channel)
+        switch content.contentType {
+        case .titleOnly:
+            sendReq.bText = true
+            sendReq.text = content.title
+            
+        case .imageOnly:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXImageObject = WXImageObject()
+            obj.imageData = content.imageData;
+            message.mediaObject = obj;
+            sendReq.message = message;
+            
+        case .titleImage:
+            sendReq.bText = false
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXImageObject = WXImageObject()
+            obj.imageData = content.imageData;
+            message.mediaObject = obj;
+            message.title = content.title
+            sendReq.message = message;
+            
+        case .summaryImage:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXImageObject = WXImageObject()
+            obj.imageData = content.imageData;
+            message.mediaObject = obj;
+            message.description = content.summary
+            sendReq.message = message;
+            
+        case .titleSummaryImage:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXImageObject = WXImageObject()
+            obj.imageData = content.imageData;
+            message.mediaObject = obj;
+            message.title = content.title
+            message.description = content.summary
+            sendReq.message = message;
+            
+        case .urlOnly:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXWebpageObject = WXWebpageObject()
+            obj.webpageUrl = content.url;
+            message.mediaObject = obj;
+            sendReq.message = message;
+            
+        case .titleUrl:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXWebpageObject = WXWebpageObject()
+            obj.webpageUrl = content.url;
+            message.mediaObject = obj;
+            message.title = content.title
+            sendReq.message = message;
+            
+        case .SummaryUrl:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXWebpageObject = WXWebpageObject()
+            obj.webpageUrl = content.url;
+            message.mediaObject = obj;
+            message.description = content.summary
+            sendReq.message = message;
+            
+        case .titleSummaryUrl:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXWebpageObject = WXWebpageObject()
+            obj.webpageUrl = content.url;
+            message.mediaObject = obj;
+            message.description = content.summary
+            message.title = content.title
+            sendReq.message = message;
+            
+        case .titleSummaryImageUrl:
+            let message: WXMediaMessage = WXMediaMessage.init()
+            let obj: WXWebpageObject = WXWebpageObject()
+            obj.webpageUrl = content.url;
+            message.mediaObject = obj;
+            message.description = content.summary
+            message.title = content.title
+            message.thumbData = content.thumbData
+            sendReq.message = message;
+            
+        default:
+            sendReq.bText = true
+            sendReq.text = content.title
+        }
+        
+        let success: Bool = WXApi.send(sendReq)
+        print("success = \(success)")
     }
 }
 
@@ -45,13 +145,6 @@ extension WXApiWrap: WXApiDelegate{
     func onReq(_ req: BaseReq!) {
         print("onReq: \(req)")
     }
-    
-    /*! @brief 发送一个sendReq后，收到微信的回应
-     *
-     * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
-     * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
-     * @param resp具体的回应内容，是自动释放的
-     */
     func onResp(_ resp: BaseResp!) {
         print("resp: \(resp)")
         if resp.isKind(of: SendAuthResp.self) {
@@ -77,28 +170,3 @@ extension WXApiWrap: WXApiDelegate{
         }
     }
 }
-
-enum WXErrCodeWrap {
-    case success,errCommon,errUserCancel,errSendFail,errAuthDeny,errUnsupport
-}
-func convertWXErrorCode(_ errCode:Int32) -> WXErrCodeWrap{
-    var ret: WXErrCodeWrap = .errCommon
-    switch errCode {
-    case 0:
-        ret = .success
-    case -1:
-        ret = .errCommon
-    case -2:
-        ret = .errUserCancel
-    case -3:
-        ret = .errSendFail
-    case -4:
-        ret = .errAuthDeny
-    case -5:
-        ret = .errUnsupport
-    default:
-        ret = .success
-    }
-    return ret
-}
-
