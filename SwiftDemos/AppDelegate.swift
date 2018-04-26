@@ -9,6 +9,11 @@
 import UIKit
 //import ViewController
 
+extension Array{
+    subscript (safe index: Int) -> Element? {
+               return (0..<count).contains(index) ? self[index] : nil
+        }
+}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let vc = ViewController()
+        var arr = [1,2,3,4,5]
+        arr[1...3] = [8,8]
+//        arr.insert(19, at: 19)
+        print("arr = \(arr)")
+        let item = arr[safe: 22]
+        print("item = \(item)")
         
         return true
     }
