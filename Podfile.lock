@@ -1,17 +1,22 @@
 PODS:
+  - QBToast (0.0.3):
+    - Toaster (~> 2.1.1)
   - QQSDK (0.0.8)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SnapKit (4.0.0)
+  - Toaster (2.1.1)
   - Util (0.0.4)
   - WechatOpenSDK (1.8.2)
 
 DEPENDENCIES:
+  - QBToast (from `PodLibs/QBToast`)
   - QQSDK (from `PodLibs/QQSDK`)
   - RxCocoa (~> 4.1.2)
   - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
+  - Toaster
   - Util (from `PodLibs/Common`)
   - WechatOpenSDK
 
@@ -20,22 +25,27 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
+    - Toaster
     - WechatOpenSDK
 
 EXTERNAL SOURCES:
+  QBToast:
+    :path: PodLibs/QBToast
   QQSDK:
     :path: PodLibs/QQSDK
   Util:
     :path: PodLibs/Common
 
 SPEC CHECKSUMS:
+  QBToast: 1b029057b03a7f7ebcd9143cc1fff8bf268b346e
   QQSDK: 1db0b122e9f9164a0665f3320ad0de2aa643811b
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   Util: c354127cdcce2f19504878a1874c2f5a03c3ae9a
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
 
-PODFILE CHECKSUM: 93c72dd3029cbafd549145c3f29926c9f14fbd90
+PODFILE CHECKSUM: 120ae6639d75d9d4f7ed11049b6f446068c4b577
 
 COCOAPODS: 1.5.0

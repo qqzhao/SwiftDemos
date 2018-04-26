@@ -20,19 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let test = [1,2,3,4]
+        let test2 = [1,2,3,4]
+        let dic = ["aaa": test, "bbb": test2]
+        print("dic = \(dic)") // dic = ["bbb": [1, 2, 3, 4], "aaa": [1, 2, 3, 4]]
+        debugPrint("dic = \(dic)") // "dic = [\"bbb\": [1, 2, 3, 4], \"aaa\": [1, 2, 3, 4]]"
+        
         WXApiWrap.shared.setup()
         UIColor.test1()
         QQApiInterface.isQQInstalled()
+        
+//        let obj = TestClass1()
+//        obj.test5()
+        
+        TestClass1.test4()
+        
         return true
     }
-    
-//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-//        if (WXApiWrap.shared.handleURL(url)) {
-//            return true
-//        }
-//        
-//        return false
-//    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if (WXApiWrap.shared.handleURL(url)) {

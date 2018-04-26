@@ -7,10 +7,12 @@ target 'SwiftDemos' do
     pod 'SnapKit', '~> 4.0.0'
     pod 'RxSwift', '~> 4.1.2'
     pod 'RxCocoa', '~> 4.1.2'
+    #pod 'Toaster'
     
 # React Native Begin
     pod 'QQSDK', :path => 'PodLibs/QQSDK'
     pod 'Util', :path => 'PodLibs/Common'
+    pod 'QBToast', :path => 'PodLibs/QBToast'
 # React Native End
 end
 

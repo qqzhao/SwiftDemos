@@ -6,7 +6,10 @@
 //  Copyright © 2018年 qianzhao. All rights reserved.
 //
 
-import UIKit
+import QBToast
+import RxCocoa
+import RxSwift
+import Util
 
 /**
  UIKit.framework
@@ -23,8 +26,11 @@ private let MiniProgramWebPageUrl = "http://baidu.com"
 private let MiniProgramBrandUserName = ""
 private let MiniProgramSharePath = "/pages/index/index"
 
+
 class WXApiWrap: NSObject {
     public static let shared = WXApiWrap()
+    public let shareResult = PublishSubject<WXErrCodeWrap>()
+    public let loginResult:PublishSubject<String> = PublishSubject<String>()
     var randomStateStr: String?
     public func setup() {
         print("setup WXApiWrap...")
@@ -138,9 +144,14 @@ extension WXApiWrap: WXApiDelegate{
     
     fileprivate func responseSendMessage(_ rsp: SendMessageToWXResp) -> Void{
         print("SendMessageToWXResp: \(rsp)")
-        if convertWXErrorCode(rsp.errCode) == .success {
-            print("success ///")
-        }
+        let errCode = convertWXErrorCode(rsp.errCode)
+        shareResult.onNext(errCode)
+//        if convertWXErrorCode(rsp.errCode) == .success {
+        TestClass1.test4()
+//            print("success ///")
+//            debugPrint("success debugPrint ///")
+//            QBToaster.showText("hello world!\nHow are you? What", pos: .center)
+//        }
     }
 }
 

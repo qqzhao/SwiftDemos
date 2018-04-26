@@ -8,11 +8,16 @@
 
 import UIKit
 import Foundation
+import RxSwift
+import RxCocoa
+import QBToast
+
+let disposeBag = DisposeBag()
 
 extension WXApiWrap {
     
     func test() -> Void {
-        test12()
+        test10()
     }
     
     fileprivate func test1() -> Void {
@@ -33,6 +38,15 @@ extension WXApiWrap {
         content.contentType = .urlParams
         content.thumbData = UIImagePNGRepresentation(#imageLiteral(resourceName: "icon_camera"))
         WXApiWrap.shared.shareContent(content, channel: .wechatTimeline)
+        
+        WXApiWrap.shared.shareResult.subscribe(onNext: { (_ errCode) in
+            print("result = \(errCode)")
+            if errCode == WXErrCodeWrap.success {
+                QBToaster.showText("分享成功", pos: .center)
+            } else {
+                QBToaster.showText("分享失败", pos: .center)
+            }
+        }).disposed(by: disposeBag)
     }
     
     fileprivate func test11() -> Void {
