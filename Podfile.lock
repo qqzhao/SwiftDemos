@@ -16,7 +16,6 @@ DEPENDENCIES:
   - RxCocoa (~> 4.1.2)
   - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
-  - Toaster
   - Util (from `PodLibs/Common`)
   - WechatOpenSDK
 
@@ -46,6 +45,6 @@ SPEC CHECKSUMS:
   Util: c354127cdcce2f19504878a1874c2f5a03c3ae9a
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
 
-PODFILE CHECKSUM: 120ae6639d75d9d4f7ed11049b6f446068c4b577
+PODFILE CHECKSUM: b992e8fa60994c0b5686f279525b80e36f29549a
 
 COCOAPODS: 1.5.0

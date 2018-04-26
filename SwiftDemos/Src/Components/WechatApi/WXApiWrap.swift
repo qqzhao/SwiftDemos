@@ -30,7 +30,7 @@ private let MiniProgramSharePath = "/pages/index/index"
 class WXApiWrap: NSObject {
     public static let shared = WXApiWrap()
     public let shareResult = PublishSubject<WXErrCodeWrap>()
-    public let loginResult:PublishSubject<String> = PublishSubject<String>()
+    public let loginResult = PublishSubject<String>()
     var randomStateStr: String?
     public func setup() {
         print("setup WXApiWrap...")
@@ -138,7 +138,9 @@ extension WXApiWrap: WXApiDelegate{
     fileprivate func responseSendAuth(_ rsp: SendAuthResp) -> Void{
         print("SendAuthResp: \(rsp)")
         if convertWXErrorCode(rsp.errCode) == .success && randomStateStr == rsp.state {
-            print("success ///")
+            loginResult.onNext(rsp.code)
+        } else {
+            loginResult.onError(NSError(domain: "login fail", code: -1, userInfo: nil))
         }
     }
     
@@ -146,12 +148,6 @@ extension WXApiWrap: WXApiDelegate{
         print("SendMessageToWXResp: \(rsp)")
         let errCode = convertWXErrorCode(rsp.errCode)
         shareResult.onNext(errCode)
-//        if convertWXErrorCode(rsp.errCode) == .success {
-        TestClass1.test4()
-//            print("success ///")
-//            debugPrint("success debugPrint ///")
-//            QBToaster.showText("hello world!\nHow are you? What", pos: .center)
-//        }
     }
 }
 
