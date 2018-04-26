@@ -18,10 +18,10 @@ import UIKit
  libc++.tbd
  libsqlite3.tbd
  */
-let APPID = "wxa1f06899243f8b14"
-let MiniProgramWebPageUrl = "http://baidu.com"
-let MiniProgramBrandUserName = ""
-let MiniProgramSharePath = "/pages/index/index"
+private let APPID = "wxa1f06899243f8b14"
+private let MiniProgramWebPageUrl = "http://baidu.com"
+private let MiniProgramBrandUserName = ""
+private let MiniProgramSharePath = "/pages/index/index"
 
 class WXApiWrap: NSObject {
     public static let shared = WXApiWrap()
